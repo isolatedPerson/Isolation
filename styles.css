@@ -1,0 +1,360 @@
+html {
+    scroll-behavior: smooth;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li a {
+    color: white; /* Sets the text color to white */
+    padding: 10px; /* Adjust padding as needed */
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: black; /* This ensures the text is visible on a white background */
+    border-radius: 10px; /* Adjust this value to get the desired roundness of corners */
+}
+
+
+body {
+    background: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
+    color: #333; /* This is for the text color, adjust if necessary */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.title-section .title-image {
+    width: 50vw; /* Viewport width: makes the image take the full width of the viewport */
+    height: 70vh; /* Viewport height: makes the image take almost the full height of the viewport */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensures the image stays behind the text content */
+}
+
+.title-section {
+    text-align: center;
+    color: white;
+}
+
+.title-section h1 {
+    font-size: 3em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.title-image-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.title-image-slider .title-slide {
+    width: auto; /* Maintain the aspect ratio */
+    height: 70vh; /* Fixed height for all images */
+    object-fit: contain; /* This will ensure the images are scaled correctly without being cropped or stretched */
+    border: 3px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: block; /* This will prevent inline-block default spacing */
+    margin-left: auto; /* This will center the image horizontally if it's smaller than the container */
+    margin-right: auto; /* This will center the image horizontally if it's smaller than the container */
+}
+
+
+.title-section p {
+    font-size: 1.5em; /* Adjust font size as needed */
+    padding-left: 275px; /* Padding on the left side */
+    padding-right: 275px; /* Padding on the right side */
+}
+
+.title-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.title-dot.active, .title-dot:hover {
+    background-color: white;
+}
+
+.title-dot.active {
+    background-color: black; /* Active dot color */
+}
+
+/* Optional: change color on hover */
+.title-dot:hover {
+    background-color: #717171;
+}
+
+.slider-dots {
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+    /* Remove width: 100%; if you want to position the dots to the right */
+}
+
+
+.about {
+    text-align: center; /* Centers the text */
+    color: white; /* Sets the text color to white */
+}
+
+.about h2 {
+    font-size: 3em; /* Adjust font size as needed, assuming it matches the title-section */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.about p {
+    font-size: 1.5em; /* Adjust font size as needed, assuming it matches the title-section */
+    margin-top: 5px; /* Space above the paragraph */
+}
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.about-text ul {
+    list-style-type: disc; /* Or 'none' if you don't want any bullets */
+    padding-left: 20px; /* Adjust as needed for padding inside the bullet list */
+}
+.about-text ul li {
+    margin: 30px 50px; /* Adjust this value as needed to add space between bullets */
+}
+
+.about-slider {
+    flex: 1;
+}
+
+.vertical-slider {
+    display: flex;
+    flex-direction: column;
+    align-items:center; /* Center the images vertically */
+    justify-content: flex-start;
+    position: relative;
+}
+
+.vertical-slider img {
+    display: none; /* Hide all images */
+    width: 600px; /* Make images stretch to the container's width */
+    height: 400px; /* Make images the same height as the container */
+    border: 3px solid white;
+    border-radius: 3%;
+    max-width: 60vw;
+    object-fit: cover; /* This will cover the area, potentially cropping the image */
+    background-color: #fff; /* White background for each image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow to each image */
+    cursor: pointer; /* Indicates that the image can be clicked */
+}
+
+.vertical-slider img:first-child {
+    display: block; /* Show the first image */
+}
+
+
+
+.visual-audio {
+    text-align: center;
+    color: #282828;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+}
+
+.slide {
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute; /* Keep this as absolute */
+    transform: translateY(-100%);
+    padding: 10px;
+    color: black;
+    background-color: rgba(255,255,255);
+    font-weight: bold;
+    z-index: 10; /* Ensure buttons are above other content */
+    border-radius: 100%;
+}
+
+.slider-button {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.5s ease;
+}
+
+.slider-button.active, .slider-button:hover {
+    background-color: #000000;
+}
+.slider-buttons {
+    position: relative;
+    bottom: 30px; /* Adjust this value as needed to move the buttons up */
+    text-align: center;
+}
+
+
+.visual-audio h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.visual-audio ul {
+    text-align: left;
+}
+
+.visual-audio p {
+    text-align: left;
+}
+
+.slide-content {
+    position: relative; /* Add this line */
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 1000px;
+    min-height: 500px;
+    margin: auto;
+}
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.slide audio {
+    width: 100%; /* Make audio player full width */
+    margin: 20px 0;
+}
+
+.slide p {
+    font-size: 16px;
+    margin: 20px;
+}
+.prev {
+    left: 180px; /* Adjust as needed */
+}
+
+.next {
+    right: 180px; /* Adjust as needed */
+}
+
+.slide a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #232527;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.slide a:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the visible slide */
+.active-slide {
+    display: block; /* Only the active slide is displayed */
+}
+
+
+/* Hover effect for links */
+.slide a:hover {
+    background-color: #0056b3; /* Darken the link background on hover */
+}
+
+.resources {
+    text-align: center; /* Centers the text */
+    color: #000000; /* Sets the text color to white */
+    padding: 40px;
+}
+
+.resources h2 {
+    font-size: 3em; /* Adjust font size as needed, assuming it matches the title-section */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.resources p {
+    font-size: 1.5em; /* Adjust font size as needed, assuming it matches the title-section */
+    
+    padding-left: 310px; /* Padding on the left side */
+    padding-right: 310px; /* Padding on the right side */
+}
+
+footer {
+    text-align: center;
+}
+.helplines {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0 auto; /* Center the list in the section */
+    max-width: 900px; /* Maximum width of the list */
+}
+
+.helplines li {
+    background-color: #fff; /* White background for list items */
+    margin-bottom: 15px; /* Space between list items */
+    padding: 20px; /* Padding inside list items */
+    border-radius: 8px; /* Rounded corners for list items */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-align: left; /* Align text to the left */
+}
+
+.helplines strong {
+    color: #333; /* Dark text for emphasis */
+    display: block; /* Make the strong element block to break line */
+    margin-bottom: 5px; /* Space below the strong element */
+}
+
+.helplines a {
+    color: #0056b3; /* Color for links */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.helplines a:hover {
+    color: #003d82; /* Darken the link color on hover */
+}
